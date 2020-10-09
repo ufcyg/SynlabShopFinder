@@ -1,0 +1,19 @@
+{
+  "name": "synlab/shop-finder",
+  "description": "Synlab Shop Finder",
+  "type": "shopware-platform-plugin",
+  "version": "v1.0.0",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "SynlabShopFinder\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "SynlabShopFinder\\SynlabShopFinder",
+    "label": {
+      "de-DE": "Synlab Shop Finder",
+      "en-GB": "Synlab Shop Finder"
+    }
+  }
+}
