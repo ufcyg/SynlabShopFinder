@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace SynlabShopFinder\Core\Api;
+
 use Faker\Factory;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
@@ -13,7 +15,6 @@ use Shopware\Core\System\Country\CountryEntity;
 use Shopware\Core\System\Country\Exception\CountryNotFoundException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Annotation;
 
 /**
  * @RouteScope(scopes={"api"})
