@@ -37,7 +37,7 @@ class FooterSubscriber implements EventSubscriberInterface
 
         $shops = $this->fetchShops($event->getContext());
 
-        $event->getPagelet()->addExtension('synlab_shop_finder', $shops);
+        $event->getPagelet()->addExtension('synlab_shop_finder', $shops);           
     }
 
     private function fetchShops(Context $context): ShopFinderCollection

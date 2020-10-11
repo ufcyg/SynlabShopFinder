@@ -59,6 +59,8 @@ class DemoDataController extends AbstractController
                 'street' => $faker->streetAddress,
                 'postCode' => $faker->postcode,
                 'city' => $faker->city,
+                'url' => 'www.4theye.net',
+                'telephone' => '00497131162757',
                 'countryId' => $country->getId(),
             ];
         }

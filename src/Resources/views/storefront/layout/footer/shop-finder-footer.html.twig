@@ -1,0 +1,62 @@
+<div class="col-md4 footer-column js-footer-column">
+    <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+        data-target="#collapseFooterHotline"
+        aria-expanded="true"
+        aria-controls="collapseFooterHotline">
+    Stores <!-- todo translate -->
+        <div class="footer-column-toggle">
+            <span class="footer-plus-icon">{% sw_icon 'plus' %}</span>
+            <span class="footer-minus-icon">{% sw_icon 'minus' %}</span>
+        </div>
+    </div>
+
+    <div id="collapseFooterHotline"
+         class="footer-column-content collapse js-footer-column-content footer-contact"
+         aria-labelledby="headingOne">
+         <ul>
+            {% for shop in synlab_shop_finder.elements %}
+                <li><a href="#" data-toggle="modal" data-target="#shop-{{ shop.id }}">{{ shop.name }}</a></li>
+            {% endfor %}
+         </ul>
+
+    </div>
+</div>
+
+{% for shop in synlab_shop_finder.elements %}
+    <div class="modal" tabindex="-1" role="dialog" id="shop-{{ shop.id }}">
+        <div class="modla-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ shop.name }}</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        {{ shop.name }}<br>
+                        {{ shop.street }}<br>
+                        {{ shop.postCode }} {{ shop.city }}<br>
+                        {{ shop.country.name }}<br>
+                        {% if shop.telephone %}
+                            {{ shop.telephone }}<br>
+                        {% endif %}
+                        {% if shop.url %}
+                            {{ shop.url }}</a><br>
+                        {% endif %}
+                    </p>
+
+                    {% if shop.openTimes %}
+                        <p>
+                            Open Times: <br>
+                            {{ shop.openTimes }}
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
